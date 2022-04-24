@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -22,6 +22,28 @@ public class RaceController : MonoBehaviour
             abilityController.AbilityUpdateInfo(abilityTitle);
             skillsController.SkillsModiferUpdater(abilityTitle);
         }
+
+        CharacterController character = GameObject.Find("Character").GetComponent<CharacterController>();
+
+        TMP_Text features = GameObject.Find("Features").GetComponent<TMP_Text>();
+        foreach (string feature in character.featuresRace)
+        {
+            features.text += feature + "\n";
+        }
+
+        
+
+        TMP_Text proficienciesAndLanguages = GameObject.Find("ProficienciesAndLanguages").GetComponent<TMP_Text>();
+        proficienciesAndLanguages.text += "РЈРјРµРЅРёСЏ: ";
+        foreach (string prof in character.proficienciesRase)
+        {
+            proficienciesAndLanguages.text += prof + ", ";
+        }
+        proficienciesAndLanguages.text += "\nРЇР·С‹РєРё: ";
+        foreach (string lang in character.languagesRace)
+        {
+            proficienciesAndLanguages.text += lang + ", ";
+        }
     }
 
     private void SetRaceToCharacter(string raceSelected)
@@ -32,7 +54,7 @@ public class RaceController : MonoBehaviour
         switch (raceSelected)
         {
             case "Race": SetRaceDefault(character); break;
-            case "Горный Дварф": SetRaceMountainDvarf(character); break;
+            case "Р“РѕСЂРЅС‹Р№ Р”РІР°СЂС„": SetRaceMountainDvarf(character); break;
 
             default:
                 break;
@@ -67,32 +89,32 @@ public class RaceController : MonoBehaviour
 
         character.languagesRace = new List<string>
         {
-            "Общий",
-            "Дварфский"
+            "РћР±С‰РёР№",
+            "Р”РІР°СЂС„СЃРєРёР№"
         };
         character.proficienciesRase = new List<string>
         {
-            "Легкие доспехи",
-            "Средние доспехи",
-            "Боевые топоры",
-            "Ручные топоры",
-            "Легкие молоты",
-            "Боевые молоты",
-            "Ручные топоры"
+            "Р›РµРіРєРёРµ РґРѕСЃРїРµС…Рё",
+            "РЎСЂРµРґРЅРёРµ РґРѕСЃРїРµС…Рё",
+            "Р‘РѕРµРІС‹Рµ С‚РѕРїРѕСЂС‹",
+            "Р СѓС‡РЅС‹Рµ С‚РѕРїРѕСЂС‹",
+            "Р›РµРіРєРёРµ РјРѕР»РѕС‚С‹",
+            "Р‘РѕРµРІС‹Рµ РјРѕР»РѕС‚С‹",
+            "Р СѓС‡РЅС‹Рµ С‚РѕРїРѕСЂС‹"
         };
         character.featuresRace = new List<string>
         {
-            "Темное зрение 60",
+            "РўРµРјРЅРѕРµ Р·СЂРµРЅРёРµ 60",
 
-            "Дварфская устойчивость. \n Вы совершаете с " +
-            "преимуществом спасброски от яда и вы получаете " +
-            "сопротивление к урону ядом",
+            "Р”РІР°СЂС„СЃРєР°СЏ СѓСЃС‚РѕР№С‡РёРІРѕСЃС‚СЊ. \n Р’С‹ СЃРѕРІРµСЂС€Р°РµС‚Рµ СЃ " +
+            "РїСЂРµРёРјСѓС‰РµСЃС‚РІРѕРј СЃРїР°СЃР±СЂРѕСЃРєРё РѕС‚ СЏРґР° Рё РІС‹ РїРѕР»СѓС‡Р°РµС‚Рµ " +
+            "СЃРѕРїСЂРѕС‚РёРІР»РµРЅРёРµ Рє СѓСЂРѕРЅСѓ СЏРґРѕРј",
             
-            "Знание камня. \n Если вы совершаете проверку" +
-            "Интеллекта (История), связанную с происхождением" +
-            " работы по камню, вы считаетесь владеющим " +
-            "навыком История, и добавляете к проверке удвоенный" +
-            " бонус мастерства вместо обычного.",
+            "Р—РЅР°РЅРёРµ РєР°РјРЅСЏ. \n Р•СЃР»Рё РІС‹ СЃРѕРІРµСЂС€Р°РµС‚Рµ РїСЂРѕРІРµСЂРєСѓ" +
+            "РРЅС‚РµР»Р»РµРєС‚Р° (РСЃС‚РѕСЂРёСЏ), СЃРІСЏР·Р°РЅРЅСѓСЋ СЃ РїСЂРѕРёСЃС…РѕР¶РґРµРЅРёРµРј" +
+            " СЂР°Р±РѕС‚С‹ РїРѕ РєР°РјРЅСЋ, РІС‹ СЃС‡РёС‚Р°РµС‚РµСЃСЊ РІР»Р°РґРµСЋС‰РёРј " +
+            "РЅР°РІС‹РєРѕРј РСЃС‚РѕСЂРёСЏ, Рё РґРѕР±Р°РІР»СЏРµС‚Рµ Рє РїСЂРѕРІРµСЂРєРµ СѓРґРІРѕРµРЅРЅС‹Р№" +
+            " Р±РѕРЅСѓСЃ РјР°СЃС‚РµСЂСЃС‚РІР° РІРјРµСЃС‚Рѕ РѕР±С‹С‡РЅРѕРіРѕ.",
         };
     }
 }

@@ -111,12 +111,14 @@ public class AbilityController : MonoBehaviour
     {
         SkillsController skillsController = new();
         System.Random random = new();
+        CharacterController character = GameObject.Find("Character").GetComponent<CharacterController>();
 
         foreach (string abilityTitle in abilityTitleArray)
         {
             TMP_InputField fieldAbilityInput = GameObject.Find(abilityTitle + "InputField").GetComponent<TMP_InputField>();
-            fieldAbilityInput.text = random.Next(21).ToString();
+            character.SetAbilityBasic(abilityTitle, random.Next(21));
 
+            fieldAbilityInput.text = character.GetAbility(abilityTitle).ToString();
             AbilityUpdateInfo(abilityTitle);
             skillsController.SkillsModiferUpdater(abilityTitle);
         }
