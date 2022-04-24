@@ -9,7 +9,7 @@ public class TestClass : MonoBehaviour
 
     public void CharacterAbility()
     {
-        CharacterController character = GameObject.Find("Character").GetComponent<CharacterController>();
+        CharacterData character = GameObject.Find("Character").GetComponent<CharacterData>();
         q.text = character.GetStrength.ToString();
         w.text = character.GetIntelligence.ToString();
         e.text = character.GetConstitution.ToString();

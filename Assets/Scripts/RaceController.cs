@@ -12,30 +12,29 @@ public class RaceController : MonoBehaviour
 
         TMP_Text race = GameObject.Find("Race").GetComponent<TMP_Text>();
         race.text = raceSelected;
+        CharacterData character = GameObject.Find("Character").GetComponent<CharacterData>();
 
-        SetRaceToCharacter(raceSelected);
 
-        AbilityController abilityController = new();
-        SkillsController skillsController = new();
+        SetRaceToCharacter(character, raceSelected);
+
+        AbilityController abilityController = GameObject.Find("Ability").GetComponent<AbilityController>();
+        SkillsController skillsController = GameObject.Find("Skills").GetComponent<SkillsController>();
         foreach (string abilityTitle in abilityController.abilityTitleArray)
         {
             abilityController.AbilityUpdateInfo(abilityTitle);
             skillsController.SkillsModiferUpdater(abilityTitle);
         }
 
-        CharacterController character = GameObject.Find("Character").GetComponent<CharacterController>();
-
         TMP_Text features = GameObject.Find("Features").GetComponent<TMP_Text>();
+        features.text = "";
         foreach (string feature in character.featuresRace)
         {
             features.text += feature + "\n";
         }
 
-        
-
         TMP_Text proficienciesAndLanguages = GameObject.Find("ProficienciesAndLanguages").GetComponent<TMP_Text>();
-        proficienciesAndLanguages.text += "Умения: ";
-        foreach (string prof in character.proficienciesRase)
+        proficienciesAndLanguages.text = "Умения: ";
+        foreach (string prof in character.proficienciesRace)
         {
             proficienciesAndLanguages.text += prof + ", ";
         }
@@ -46,9 +45,8 @@ public class RaceController : MonoBehaviour
         }
     }
 
-    private void SetRaceToCharacter(string raceSelected)
+    private void SetRaceToCharacter(CharacterData character, string raceSelected)
     {
-        CharacterController character = GameObject.Find("Character").GetComponent<CharacterController>();
         character.race = raceSelected;
 
         switch (raceSelected)
@@ -61,7 +59,7 @@ public class RaceController : MonoBehaviour
         }
     }
 
-    private void SetRaceDefault(CharacterController character)
+    private void SetRaceDefault(CharacterData character)
     {
         character.strengthRace = 0;
         character.dexterityRace = 0;
@@ -73,10 +71,10 @@ public class RaceController : MonoBehaviour
         character.speed = 0;
 
         character.languagesRace = new List<string>();
-        character.proficienciesRase = new List<string>();
+        character.proficienciesRace = new List<string>();
         character.featuresRace = new List<string>();
     }
-    private void SetRaceMountainDvarf(CharacterController character)
+    private void SetRaceMountainDvarf(CharacterData character)
     {
         character.strengthRace = 2;
         character.dexterityRace = 0;
@@ -92,7 +90,7 @@ public class RaceController : MonoBehaviour
             "Общий",
             "Дварфский"
         };
-        character.proficienciesRase = new List<string>
+        character.proficienciesRace = new List<string>
         {
             "Легкие доспехи",
             "Средние доспехи",
@@ -110,7 +108,7 @@ public class RaceController : MonoBehaviour
             "преимуществом спасброски от яда и вы получаете " +
             "сопротивление к урону ядом",
             
-            "Знание камня. \n Если вы совершаете проверку" +
+            "Знание камня. \n Если вы совершаете проверку " +
             "Интеллекта (История), связанную с происхождением" +
             " работы по камню, вы считаетесь владеющим " +
             "навыком История, и добавляете к проверке удвоенный" +

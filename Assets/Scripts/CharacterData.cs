@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
+public class CharacterData : MonoBehaviour
 {
     public int strengthBasic, dexterityBasic, constitutionBasic, intelligenceBasic, wisdomBasic, charismaBasic;
     public int strengthRace, dexterityRace, constitutionRace, intelligenceRace, wisdomRace, charismaRace;
@@ -10,7 +10,7 @@ public class CharacterController : MonoBehaviour
     public int speed;
     public string race;
 
-    public List<string> proficienciesRase, languagesRace, featuresRace;
+    public List<string> proficienciesRace, languagesRace, featuresRace;
 
 
     private void Start()
@@ -35,7 +35,7 @@ public class CharacterController : MonoBehaviour
         speed = 0;
         race = "Race";
 
-        proficienciesRase = new List<string>();
+        proficienciesRace = new List<string>();
         languagesRace = new List<string>();
         featuresRace = new List<string>();
     }

@@ -45,7 +45,7 @@ public class AbilityController : MonoBehaviour
     {
         int abilityScore = int.Parse(GameObject.Find(abilityTitle + "InputField").GetComponent<TMP_InputField>().text);
 
-        CharacterController character = GameObject.Find("Character").GetComponent<CharacterController>();
+        CharacterData character = GameObject.Find("Character").GetComponent<CharacterData>();
         character.SetAbilityBasic(abilityTitle, abilityScore);
 
         AbilityUpdateInfo(abilityTitle);
@@ -55,7 +55,7 @@ public class AbilityController : MonoBehaviour
     {
         dataFields fields = GetFields(abilityTitle);
 
-        CharacterController character = GameObject.Find("Character").GetComponent<CharacterController>();
+        CharacterData character = GameObject.Find("Character").GetComponent<CharacterData>();
 
         int abilityScore = character.GetAbility(abilityTitle);
 
@@ -109,9 +109,9 @@ public class AbilityController : MonoBehaviour
 
     public void RandomizeAbility()
     {
-        SkillsController skillsController = new();
+        SkillsController skillsController = GameObject.Find("Skills").GetComponent<SkillsController>();
         System.Random random = new();
-        CharacterController character = GameObject.Find("Character").GetComponent<CharacterController>();
+        CharacterData character = GameObject.Find("Character").GetComponent<CharacterData>();
 
         foreach (string abilityTitle in abilityTitleArray)
         {
