@@ -10,13 +10,42 @@ public class CharacterController : MonoBehaviour
     public int speed;
     public string race;
 
+    public List<string> proficienciesRase, languagesRace, featuresRace;
+
+
+    private void Start()
+    {
+        CharacterInit();
+    }
+    private void CharacterInit()
+    {
+        strengthBasic = 10;
+        dexterityBasic = 10;
+        constitutionBasic = 10;
+        intelligenceBasic = 10;
+        wisdomBasic = 10;
+        charismaBasic = 10;
+        strengthRace = 0;
+        dexterityRace = 0;
+        constitutionRace = 0;
+        intelligenceRace = 0;
+        wisdomRace = 0;
+        charismaRace = 0;
+
+        speed = 0;
+        race = "Race";
+
+        proficienciesRase = new List<string>();
+        languagesRace = new List<string>();
+        featuresRace = new List<string>();
+    }
+
     public int GetStrength { get => strengthBasic + strengthRace; }
     public int GetDexterity { get => dexterityBasic + dexterityRace; }
     public int GetConstitution { get => constitutionBasic + constitutionRace; }
     public int GetIntelligence { get => intelligenceBasic + intelligenceRace; }
     public int GetWisdom { get => wisdomBasic + wisdomRace; }
     public int GetCharisma { get => charismaBasic + charismaRace; }
-
 
     public int GetAbility(string abilityTitle)
     {
@@ -64,22 +93,5 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        strengthBasic = 10;
-        dexterityBasic = 10;
-        constitutionBasic = 10;
-        intelligenceBasic = 10;
-        wisdomBasic = 10;
-        charismaBasic = 10;
-        strengthRace = 0;
-        dexterityRace = 0;
-        constitutionRace = 0;
-        intelligenceRace = 0;
-        wisdomRace = 0;
-        charismaRace = 0;
 
-        speed = 0;
-        race = "Race";
-    }
 }
