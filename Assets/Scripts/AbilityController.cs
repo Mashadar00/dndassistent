@@ -26,6 +26,13 @@ public class AbilityController : MonoBehaviour
         AbilityUpdateInfo(abilityTitle);
     }
 
+    public void AbilityUpdateInfoAll()
+    {
+        foreach (string abilityTitle in abilityTitleArray)
+        {
+            AbilityUpdateInfo(abilityTitle);
+        }
+    }
     public void AbilityUpdateInfo(string abilityTitle)
     {
         int abilityScore = findController.character.GetAbility(abilityTitle);
@@ -36,6 +43,7 @@ public class AbilityController : MonoBehaviour
         findController.abilityBonus[abilityTitle].text = abilityScore.ToString();
         
         AbilitySavingThrowsInfoUpdate(abilityTitle);
+        findController.skillsController.SkillsModiferUpdater(abilityTitle);
     }
 
     private int AbilityBonusCalculation(int abilityScore)

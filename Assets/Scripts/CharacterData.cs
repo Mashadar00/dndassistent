@@ -9,7 +9,7 @@ public class CharacterData : MonoBehaviour
 
     public int level;
     public int speed;
-    public string race;
+    public string race, characterClass;
 
     public List<string> proficienciesRace, languagesRace, featuresRace;
 
@@ -36,6 +36,7 @@ public class CharacterData : MonoBehaviour
         level = 1;
         speed = 0;
         race = "Race";
+        characterClass = "Class";
 
         proficienciesRace = new List<string>();
         languagesRace = new List<string>();
