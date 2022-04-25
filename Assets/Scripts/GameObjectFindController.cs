@@ -10,8 +10,9 @@ public class GameObjectFindController : MonoBehaviour
     public SkillsController skillsController;
     public AbilityController abilityController;
     public TextDataController textDataController;
+    public ItemsController itemsController;
     public TMP_Text levelBonus, raceSelected, race, features, proficienciesAndLanguages, 
-        speed, characterClassSelected, characterClass;
+        speed, characterClassSelected, characterClass, healthDice;
     public TMP_InputField level;
     public Dictionary<string, TMP_InputField> abilityInputField, abilityScoreField;
     public Dictionary<string, TMP_Text> abilityBonus;
@@ -29,6 +30,7 @@ public class GameObjectFindController : MonoBehaviour
         skillsController = GameObject.Find("Skills").GetComponent<SkillsController>();
         abilityController = GameObject.Find("Ability").GetComponent<AbilityController>();
         textDataController = GameObject.Find("Canvas").GetComponent<TextDataController>();
+        itemsController = GameObject.Find("Canvas").GetComponent<ItemsController>();
         speed = GameObject.Find("Speed").GetComponent<TMP_Text>();
 
         raceSelected = GameObject.Find("RaceChoice").GetComponentInChildren<TMP_Text>();
@@ -37,6 +39,7 @@ public class GameObjectFindController : MonoBehaviour
         characterClass = GameObject.Find("CharacterClass").GetComponent<TMP_Text>();
         features = GameObject.Find("Features").GetComponent<TMP_Text>();
         proficienciesAndLanguages = GameObject.Find("ProficienciesAndLanguages").GetComponent<TMP_Text>();
+        healthDice = GameObject.Find("HealthDice").GetComponent<TMP_Text>();
 
         abilityInputField = new();
         abilityScoreField = new();

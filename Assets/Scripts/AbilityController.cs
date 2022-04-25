@@ -54,6 +54,14 @@ public class AbilityController : MonoBehaviour
         }
         return (abilityScore - 10) / 2;
     }
+
+    public void AbilitySavingThrowsInfoUpdateAll()
+    {
+        foreach (string abilityTitle in abilityTitleArray)
+        {
+            AbilitySavingThrowsInfoUpdate(abilityTitle);
+        }
+    }
     public void AbilitySavingThrowsInfoUpdate(string abilityTitle)
     {
         int abilityScore = findController.character.GetAbility(abilityTitle);

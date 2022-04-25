@@ -94,13 +94,13 @@ public class RaceController : MonoBehaviour
         };
         findController.character.proficienciesRace = new List<string>
         {
-            "Легкие доспехи",
-            "Средние доспехи",
-            "Боевые топоры",
-            "Ручные топоры",
-            "Легкие молоты",
-            "Боевые молоты",
-            "Ручные топоры"
+            "Легкий доспех",
+            "Средний доспех",
+            "Боевой топор",
+            "Ручной топор",
+            "Легкий молот",
+            "Боевой молот",
+            "Ручной топор"
         };
         findController.character.featuresRace = new List<string>
         {
@@ -138,13 +138,13 @@ public class RaceController : MonoBehaviour
         };
         findController.character.proficienciesRace = new List<string>
         {
-            "Легкие доспехи",
-            "Средние доспехи",
-            "Боевые топоры",
-            "Ручные топоры",
-            "Легкие молоты",
-            "Боевые молоты",
-            "Ручные топоры"
+            "Легкий доспех",
+            "Средний доспех",
+            "Боевой топор",
+            "Ручной топор",
+            "Легкий молот",
+            "Боевой молот",
+            "Ручной топор"
         };
         findController.character.featuresRace = new List<string>
         {
@@ -186,10 +186,10 @@ public class RaceController : MonoBehaviour
         };
         findController.character.proficienciesRace = new List<string>
         {
-            "Длинные мечи",
-            "Короткие мечи",
-            "Длинные луки",
-            "Короткие луки"
+            "Длинный меч",
+            "Короткий меч",
+            "Длинный лук",
+            "Короткий лук"
         };
         findController.character.featuresRace = new List<string>
         {
@@ -237,10 +237,10 @@ public class RaceController : MonoBehaviour
         };
         findController.character.proficienciesRace = new List<string>
         {
-            "Длинные мечи",
-            "Короткие мечи",
-            "Длинные луки",
-            "Короткие луки"
+            "Длинный меч",
+            "Короткий меч",
+            "Длинный лук",
+            "Короткий лук"
         };
         findController.character.featuresRace = new List<string>
         {
@@ -286,9 +286,9 @@ public class RaceController : MonoBehaviour
         };
         findController.character.proficienciesRace = new List<string>
         {
-            "Рапиры",
-            "Короткие мечи",
-            "Ручные арбалеты"
+            "Рапира",
+            "Короткий меч",
+            "Ручной арбалет"
         };
         findController.character.featuresRace = new List<string>
         {

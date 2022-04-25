@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,32 +26,53 @@ public class CharacterClassController : MonoBehaviour
         switch (characterClassSelected)
         {
             case "Class": SetCharacterClassDefault(); break;
-            case "Варвар": SetCharacterClassBarbarian(); break;
-            case "Бард": SetCharacterClassBard(); break;
-            case "Жрец": SetCharacterClassCleric(); break;
-            case "Друид": SetCharacterClassDruid(); break;
-            case "Воин": SetCharacterClassFighter(); break;
-            case "Монах": SetCharacterClassMonk(); break;
-            case "Паладин": SetCharacterClassPaladin(); break;
-            case "Следопыт": SetCharacterClassRanger(); break;
-            case "Плут": SetCharacterClassRogue(); break;
-            case "Чародей": SetCharacterClassSorcerer(); break;
-            case "Колдун": SetCharacterClassWarlock(); break;
-            case "Волшебник": SetCharacterClassWizard(); break;
+            case "Р’Р°СЂРІР°СЂ": SetCharacterClassBarbarian(); break;
+            case "Р‘Р°СЂРґ": SetCharacterClassBard(); break;
+            case "Р–СЂРµС†": SetCharacterClassCleric(); break;
+            case "Р”СЂСѓРёРґ": SetCharacterClassDruid(); break;
+            case "Р’РѕРёРЅ": SetCharacterClassFighter(); break;
+            case "РњРѕРЅР°С…": SetCharacterClassMonk(); break;
+            case "РџР°Р»Р°РґРёРЅ": SetCharacterClassPaladin(); break;
+            case "РЎР»РµРґРѕРїС‹С‚": SetCharacterClassRanger(); break;
+            case "РџР»СѓС‚": SetCharacterClassRogue(); break;
+            case "Р§Р°СЂРѕРґРµР№": SetCharacterClassSorcerer(); break;
+            case "РљРѕР»РґСѓРЅ": SetCharacterClassWarlock(); break;
+            case "Р’РѕР»С€РµР±РЅРёРє": SetCharacterClassWizard(); break;
 
             default:
                 break;
         }
+
+        findController.abilityController.AbilitySavingThrowsInfoUpdateAll();
+        findController.textDataController.HealthDiceInfoUpdate();
+        findController.textDataController.ProficienciesAndLanguagesInfoUpdater();
     }
 
     private void SetCharacterClassDefault()
     {
-        throw new NotImplementedException();
+        findController.character.healthDice = 0;
+        findController.character.abilityMain = "";
+        findController.abilityToggle["Strength"].isOn = false;
+        findController.abilityToggle["Constitution"].isOn = false;
+
+        findController.character.proficienciesCharacterClass = new();
     }
 
     private void SetCharacterClassBarbarian()
     {
-        throw new NotImplementedException();
+        findController.character.healthDice = 12;
+        findController.character.abilityMain = "Strength";
+        findController.abilityToggle["Strength"].isOn = true;
+        findController.abilityToggle["Constitution"].isOn = true;
+
+        findController.character.proficienciesCharacterClass = new List<string>
+        {
+            "Р›РµРіРєРёРµ РґРѕСЃРїРµС…Рё",
+            "РЎСЂРµРґРЅРёРµ РґРѕСЃРїРµС…Рё",
+            "Р©РёС‚С‹",
+            "РџСЂРѕСЃС‚РѕРµ РѕСЂСѓР¶РёРµ",
+            "Р’РѕРёРЅСЃРєРѕРµ РѕСЂСѓР¶РёРµ"
+        };
     }
 
     private void SetCharacterClassBard()

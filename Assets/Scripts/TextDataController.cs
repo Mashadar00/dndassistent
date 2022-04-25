@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 public class TextDataController : MonoBehaviour
@@ -13,28 +14,48 @@ public class TextDataController : MonoBehaviour
 
     public void FeaturesInfoUpdater()
     {
+        List<string> features = findController.character.featuresRace;
+
+        StringBuilder stringBuilder = new("");
         findController.features.text = "";
-        foreach (string feature in findController.character.featuresRace)
+        foreach (string ftr in features)
         {
-            findController.features.text += feature + "\n";
+            stringBuilder.Append(ftr + "\n");
         }
+        findController.features.text = stringBuilder.ToString();
     } 
     public void ProficienciesAndLanguagesInfoUpdater()
     {
-        findController.proficienciesAndLanguages.text = "”мени€: ";
-        foreach (string prof in findController.character.proficienciesRace)
+        List<string> proficiencies = findController.character.proficienciesRace;
+        foreach (string prof in findController.character.proficienciesCharacterClass)
         {
-            findController.proficienciesAndLanguages.text += prof + ", ";
+            if (!proficiencies.Contains(prof))
+            {
+                proficiencies.Add(prof);
+            }
         }
-        findController.proficienciesAndLanguages.text += "\nязыки: ";
+
+        StringBuilder stringBuilder = new("”мени€: ");
+        foreach (string prof in proficiencies)
+        {
+            stringBuilder.Append(prof + ", ");
+        }
+        stringBuilder.Append("\nязыки: ");
         foreach (string lang in findController.character.languagesRace)
         {
-            findController.proficienciesAndLanguages.text += lang + ", ";
+            stringBuilder.Append(lang + ", ");
         }
+
+        findController.proficienciesAndLanguages.text = stringBuilder.ToString();
     }
 
     public void SpeedInfoUpdate()
     {
         findController.speed.text = findController.character.speed.ToString();
+    }
+
+    public void HealthDiceInfoUpdate()
+    {
+        findController.healthDice.text = findController.character.healthDice.ToString();
     }
 }
