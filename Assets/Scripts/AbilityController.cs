@@ -34,9 +34,8 @@ public class AbilityController : MonoBehaviour
 
         abilityScore = AbilityBonusCalculation(abilityScore);
         findController.abilityBonus[abilityTitle].text = abilityScore.ToString();
-
-        abilityScore = AbilitySavingThrowsCalculation(abilityScore, abilityTitle);
-        findController.abilityToggleText[abilityTitle].text = abilityScore.ToString();
+        
+        AbilitySavingThrowsInfoUpdate(abilityTitle);
     }
 
     private int AbilityBonusCalculation(int abilityScore)
@@ -47,13 +46,16 @@ public class AbilityController : MonoBehaviour
         }
         return (abilityScore - 10) / 2;
     }
-    private int AbilitySavingThrowsCalculation(int abilityScore, string abilityTitle)
+    public void AbilitySavingThrowsInfoUpdate(string abilityTitle)
     {
+        int abilityScore = findController.character.GetAbility(abilityTitle);
+        abilityScore = AbilityBonusCalculation(abilityScore);
+
         if (findController.abilityToggle[abilityTitle].isOn)
         {
             abilityScore += int.Parse(findController.levelBonus.text);
         }
-        return abilityScore;
+        findController.abilityToggleText[abilityTitle].text = abilityScore.ToString();
     }
     public void CheckValidation(TMP_InputField ability)
     {

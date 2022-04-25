@@ -10,16 +10,19 @@ public class GameObjectFindController : MonoBehaviour
     public SkillsController skillsController;
     public AbilityController abilityController;
     public TMP_Text levelBonus;
+    public TMP_InputField level;
     public Dictionary<string, TMP_InputField> abilityInputField, abilityScoreField;
     public Dictionary<string, TMP_Text> abilityBonus;
     public Dictionary<string, Text> abilityToggleText;
     public Dictionary<string, Toggle> abilityToggle;
     public Dictionary<string, Text[]> skillToggleText;
     public Dictionary<string, Toggle[]> skillToggle;
+    public Dictionary<string, GameObject> skills;
 
-    void Start()
+    void Awake()
     {
         character = GameObject.Find("Character").GetComponent<CharacterData>();
+        level = GameObject.Find("Level").GetComponent<TMP_InputField>();
         levelBonus = GameObject.Find("LevelBonus").GetComponent<TMP_Text>();
         skillsController = GameObject.Find("Skills").GetComponent<SkillsController>();
         abilityController = GameObject.Find("Ability").GetComponent<AbilityController>();
@@ -49,6 +52,12 @@ public class GameObjectFindController : MonoBehaviour
             }
             skillToggle.Add(abilityTitle, tempToggle);
             skillToggleText.Add(abilityTitle, tempText);
+        }
+
+        skills = new();
+        for (int i = 0; i < skillsController.skillArray.Length; i++)
+        {
+            skills.Add(skillsController.skillArray[i] + "Toggle", GameObject.Find(skillsController.skillArray[i] + "Toggle"));
         }
     }
 }

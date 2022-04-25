@@ -7,6 +7,7 @@ public class CharacterData : MonoBehaviour
     public int strengthBasic, dexterityBasic, constitutionBasic, intelligenceBasic, wisdomBasic, charismaBasic;
     public int strengthRace, dexterityRace, constitutionRace, intelligenceRace, wisdomRace, charismaRace;
 
+    public int level;
     public int speed;
     public string race;
 
@@ -32,6 +33,7 @@ public class CharacterData : MonoBehaviour
         wisdomRace = 0;
         charismaRace = 0;
 
+        level = 1;
         speed = 0;
         race = "Race";
 
