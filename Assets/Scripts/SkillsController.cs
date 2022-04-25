@@ -6,10 +6,28 @@ using UnityEngine.UI;
 
 public class SkillsController : MonoBehaviour
 {
+    public Dictionary<string, string[]> skillDictionary = new Dictionary<string, string[]>()
+    {
+        {"Strength", new string[] {"AthleticsStr"} },
+        {"Dexterity", new string[] { "AcrobaticsDex", "SleightOfHandDex", "StealthDex" } },
+        {"Constitution", new string[] { } },
+        {"Intelligence", new string[] { "HistoryInt", "ArcanaInt", "NatureInt", "InvestigationInt", "ReligionInt" } },
+        {"Wisdom", new string[] { "PerceptionWis", "SurvivalWis", "MedicineWis", "InsightWis", "AnimalHandlingWis" } },
+        {"Charisma", new string[] { "StrengthIntimidationCha", "DeceptionCha", "PerfomanceCha", "PersuasionCha" } }
+    };
+
+    GameObjectFindController findController;
+
+    private void Start()
+    {
+        findController = GameObject.Find("Canvas").GetComponent<GameObjectFindController>();
+
+    }
+
     public void SkillsModiferUpdater(string abilityTitle)
     {
-        int levelBonus = int.Parse(GameObject.Find("LevelBonus").GetComponent<TMP_Text>().text);
-        int abilityBonus = int.Parse(GameObject.Find(abilityTitle + "Bonus").GetComponent<TMP_Text>().text);
+        int levelBonus = int.Parse(findController.levelBonus.text);
+        int abilityBonus = int.Parse(findController.abilityBonus[abilityTitle].text);
 
         switch (abilityTitle)
         {
@@ -89,6 +107,8 @@ public class SkillsController : MonoBehaviour
         public GameObject textAthleticsToggle;
   
     }
+
+
     private dataFieldsStrength GetFieldsStrength()
     {
         return new dataFieldsStrength()
