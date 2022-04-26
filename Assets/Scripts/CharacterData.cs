@@ -7,7 +7,7 @@ public class CharacterData : MonoBehaviour
     public int strengthBasic, dexterityBasic, constitutionBasic, intelligenceBasic, wisdomBasic, charismaBasic;
     public int strengthRace, dexterityRace, constitutionRace, intelligenceRace, wisdomRace, charismaRace;
 
-    public int level, speed, healthDice;
+    public int level, speed, healthDice, health;
     public string race, characterClass, abilityMain, abilityMainSecond;
 
     public List<string> proficienciesRace, proficienciesCharacterClass, languagesRace, featuresRace;
@@ -35,12 +35,15 @@ public class CharacterData : MonoBehaviour
         level = 1;
         speed = 0;
         healthDice = 0;
+        health = 0;
+
         race = "Race";
         characterClass = "Class";
         abilityMain = "";
         abilityMainSecond = "";
 
         proficienciesRace = new List<string>();
+        proficienciesCharacterClass = new List<string>();
         languagesRace = new List<string>();
         featuresRace = new List<string>();
     }

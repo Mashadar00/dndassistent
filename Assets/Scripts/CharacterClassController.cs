@@ -44,7 +44,7 @@ public class CharacterClassController : MonoBehaviour
         }
 
         findController.abilityController.AbilitySavingThrowsInfoUpdateAll();
-        findController.textDataController.HealthDiceInfoUpdate();
+        findController.textDataController.HealthInfoUpdate();
         findController.textDataController.ProficienciesAndLanguagesInfoUpdater();
     }
     private void SetCharacterClassDefault()
@@ -59,7 +59,7 @@ public class CharacterClassController : MonoBehaviour
         findController.abilityToggle["Wisdom"].isOn = false;
         findController.abilityToggle["Charisma"].isOn = false;
 
-        findController.character.proficienciesCharacterClass = new();
+        findController.character.proficienciesCharacterClass = new List<string>();
     }
     private void SetCharacterClassBarbarian()
     {
@@ -138,9 +138,9 @@ public class CharacterClassController : MonoBehaviour
 
         findController.character.proficienciesCharacterClass = new List<string>
         {
-            "Легкий доспех (не металлический)",
-            "Средний доспех (не металлический)",
-            "Щит (не металлический)",
+            "Легкий доспех",
+            "Средний доспех",
+            "Щит (не носит доспехи и щиты из металла)",
             "Боевой посох",
             "Булава",
             "Дротик",

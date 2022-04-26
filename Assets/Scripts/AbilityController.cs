@@ -46,7 +46,7 @@ public class AbilityController : MonoBehaviour
         findController.skillsController.SkillsModiferUpdater(abilityTitle);
     }
 
-    private int AbilityBonusCalculation(int abilityScore)
+    public int AbilityBonusCalculation(int abilityScore)
     {
         if (abilityScore < 10 && abilityScore % 2 == 1)
         {

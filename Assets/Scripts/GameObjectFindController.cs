@@ -12,7 +12,7 @@ public class GameObjectFindController : MonoBehaviour
     public TextDataController textDataController;
     public ItemsController itemsController;
     public TMP_Text levelBonus, raceSelected, race, features, proficienciesAndLanguages, 
-        speed, characterClassSelected, characterClass, healthDice;
+        speed, characterClassSelected, characterClass, healthDice, health;
     public TMP_InputField level;
     public Dictionary<string, TMP_InputField> abilityInputField, abilityScoreField;
     public Dictionary<string, TMP_Text> abilityBonus;
@@ -41,6 +41,7 @@ public class GameObjectFindController : MonoBehaviour
         features = GameObject.Find("Features").GetComponent<TMP_Text>();
         proficienciesAndLanguages = GameObject.Find("ProficienciesAndLanguages").GetComponent<TMP_Text>();
         healthDice = GameObject.Find("HealthDice").GetComponent<TMP_Text>();
+        health = GameObject.Find("Health").GetComponent<TMP_Text>();
 
         abilityInputField = new();
         abilityScoreField = new();

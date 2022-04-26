@@ -53,6 +53,7 @@ public class RaceController : MonoBehaviour
         findController.textDataController.FeaturesInfoUpdater();
         findController.textDataController.ProficienciesAndLanguagesInfoUpdater();
         findController.textDataController.SpeedInfoUpdate();
+        findController.textDataController.HealthInfoUpdate();
     }
 
     private void SetRaceDefault()
@@ -99,8 +100,7 @@ public class RaceController : MonoBehaviour
             "Боевой топор",
             "Ручной топор",
             "Легкий молот",
-            "Боевой молот",
-            "Ручной топор"
+            "Боевой молот"
         };
         findController.character.featuresRace = new List<string>
         {
@@ -115,6 +115,9 @@ public class RaceController : MonoBehaviour
             " работы по камню, вы считаетесь владеющим " +
             "навыком История, и добавляете к проверке удвоенный" +
             " бонус мастерства вместо обычного.",
+
+            "Владение инструментами. Вы владеете ремесленными " +
+            "инструментами на ваш выбор: инструменты кузнеца, пивовара или каменщика"
         };
     }
     private void SetRaceHillDvarf()
@@ -143,8 +146,7 @@ public class RaceController : MonoBehaviour
             "Боевой топор",
             "Ручной топор",
             "Легкий молот",
-            "Боевой молот",
-            "Ручной топор"
+            "Боевой молот"
         };
         findController.character.featuresRace = new List<string>
         {
@@ -162,7 +164,10 @@ public class RaceController : MonoBehaviour
 
             "Дварфская выдержка. \nМаксимальное значение " +
             "ваших хитов увеличивается на 1, и вы получаете 1" +
-            "дополнительный хит с каждым новым уровнем"
+            "дополнительный хит с каждым новым уровнем",
+
+            "Владение инструментами. Вы владеете ремесленными " +
+            "инструментами на ваш выбор: инструменты кузнеца, пивовара или каменщика"
         };
     }
     private void SetRaceHighElf()

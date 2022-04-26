@@ -26,7 +26,8 @@ public class TextDataController : MonoBehaviour
     } 
     public void ProficienciesAndLanguagesInfoUpdater()
     {
-        List<string> proficiencies = findController.character.proficienciesRace;
+        List<string> proficiencies = new();
+        proficiencies.AddRange(findController.character.proficienciesRace);
         foreach (string prof in findController.character.proficienciesCharacterClass)
         {
             if (!proficiencies.Contains(prof))
@@ -57,6 +58,17 @@ public class TextDataController : MonoBehaviour
             }
         }
 
+        if (proficiencies.Contains("Все доспехи"))
+        {
+            foreach (string prof in findController.itemsController.armorClass)
+            {
+                if (proficiencies.Contains(prof))
+                {
+                    proficiencies.Remove(prof);
+                }
+            }
+        }
+
         StringBuilder stringBuilder = new("Умения: ");
         foreach (string prof in proficiencies)
         {
@@ -76,8 +88,12 @@ public class TextDataController : MonoBehaviour
         findController.speed.text = findController.character.speed.ToString();
     }
 
-    public void HealthDiceInfoUpdate()
+    public void HealthInfoUpdate()
     {
-        findController.healthDice.text = findController.character.healthDice.ToString();
+        findController.health.text = (findController.character.healthDice + 
+                                      findController.abilityController.AbilityBonusCalculation(findController.character.GetConstitution)).ToString();
+
+        findController.healthDice.text = findController.character.level.ToString() + "d" + 
+                                         findController.character.healthDice.ToString();
     }
 }
