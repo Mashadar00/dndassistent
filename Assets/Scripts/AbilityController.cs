@@ -37,6 +37,11 @@ public class AbilityController : MonoBehaviour
     {
         int abilityScore = findController.character.GetAbility(abilityTitle);
 
+        if (abilityScore > 20)
+        {
+            abilityScore = 20;
+        }
+
         findController.abilityScoreField[abilityTitle].text = abilityScore.ToString();
 
         abilityScore = AbilityBonusCalculation(abilityScore);
