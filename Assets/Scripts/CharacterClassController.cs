@@ -47,86 +47,271 @@ public class CharacterClassController : MonoBehaviour
         findController.textDataController.HealthDiceInfoUpdate();
         findController.textDataController.ProficienciesAndLanguagesInfoUpdater();
     }
-
     private void SetCharacterClassDefault()
     {
         findController.character.healthDice = 0;
         findController.character.abilityMain = "";
+        findController.character.abilityMainSecond = "";
         findController.abilityToggle["Strength"].isOn = false;
+        findController.abilityToggle["Dexterity"].isOn = false;
         findController.abilityToggle["Constitution"].isOn = false;
+        findController.abilityToggle["Intelligence"].isOn = false;
+        findController.abilityToggle["Wisdom"].isOn = false;
+        findController.abilityToggle["Charisma"].isOn = false;
 
         findController.character.proficienciesCharacterClass = new();
     }
-
     private void SetCharacterClassBarbarian()
     {
         findController.character.healthDice = 12;
         findController.character.abilityMain = "Strength";
+        findController.character.abilityMainSecond = "";
         findController.abilityToggle["Strength"].isOn = true;
+        findController.abilityToggle["Dexterity"].isOn = false;
         findController.abilityToggle["Constitution"].isOn = true;
+        findController.abilityToggle["Intelligence"].isOn = false;
+        findController.abilityToggle["Wisdom"].isOn = false;
+        findController.abilityToggle["Charisma"].isOn = false;
 
         findController.character.proficienciesCharacterClass = new List<string>
         {
-            "Легкие доспехи",
-            "Средние доспехи",
-            "Щиты",
+            "Легкий доспех",
+            "Средний доспех",
+            "Щит",
             "Простое оружие",
             "Воинское оружие"
         };
     }
-
     private void SetCharacterClassBard()
     {
-        throw new NotImplementedException();
-    }
+        findController.character.healthDice = 8;
+        findController.character.abilityMain = "Charisma";
+        findController.character.abilityMainSecond = "";
+        findController.abilityToggle["Strength"].isOn = false;
+        findController.abilityToggle["Dexterity"].isOn = true;
+        findController.abilityToggle["Constitution"].isOn = false;
+        findController.abilityToggle["Intelligence"].isOn = false;
+        findController.abilityToggle["Wisdom"].isOn = false;
+        findController.abilityToggle["Charisma"].isOn = true;
 
+        findController.character.proficienciesCharacterClass = new List<string>
+        {
+            "Легкий доспех",
+            "Простое оружие",
+            "Длинный меч",
+            "Короткий меч",
+            "Рапира",
+            "Ручной арбалет"
+        };
+    }
     private void SetCharacterClassCleric()
     {
-        throw new NotImplementedException();
-    }
+        findController.character.healthDice = 8;
+        findController.character.abilityMain = "Wisdom";
+        findController.character.abilityMainSecond = "";
+        findController.abilityToggle["Strength"].isOn = false;
+        findController.abilityToggle["Dexterity"].isOn = false;
+        findController.abilityToggle["Constitution"].isOn = false;
+        findController.abilityToggle["Intelligence"].isOn = false;
+        findController.abilityToggle["Wisdom"].isOn = true;
+        findController.abilityToggle["Charisma"].isOn = true;
 
+        findController.character.proficienciesCharacterClass = new List<string>
+        {
+            "Легкий доспех",
+            "Средний доспех",
+            "Щит",
+            "Простое оружие"
+        };
+    }
     private void SetCharacterClassDruid()
     {
-        throw new NotImplementedException();
-    }
+        findController.character.healthDice = 8;
+        findController.character.abilityMain = "Wisdom";
+        findController.character.abilityMainSecond = "";
+        findController.abilityToggle["Strength"].isOn = false;
+        findController.abilityToggle["Dexterity"].isOn = false;
+        findController.abilityToggle["Constitution"].isOn = false;
+        findController.abilityToggle["Intelligence"].isOn = true;
+        findController.abilityToggle["Wisdom"].isOn = true;
+        findController.abilityToggle["Charisma"].isOn = false;
 
+        findController.character.proficienciesCharacterClass = new List<string>
+        {
+            "Легкий доспех (не металлический)",
+            "Средний доспех (не металлический)",
+            "Щит (не металлический)",
+            "Боевой посох",
+            "Булава",
+            "Дротик",
+            "Дубинка",
+            "Кинжал",
+            "Копье",
+            "Метательное копье",
+            "Праща",
+            "Серп",
+            "Скимитар"
+        };
+    }
     private void SetCharacterClassFighter()
     {
-        throw new NotImplementedException();
-    }
+        findController.character.healthDice = 10;
+        findController.character.abilityMain = "Strength";
+        findController.character.abilityMainSecond = "Dexterity";
+        findController.abilityToggle["Strength"].isOn = true;
+        findController.abilityToggle["Dexterity"].isOn = false;
+        findController.abilityToggle["Constitution"].isOn = true;
+        findController.abilityToggle["Intelligence"].isOn = false;
+        findController.abilityToggle["Wisdom"].isOn = false;
+        findController.abilityToggle["Charisma"].isOn = false;
 
+        findController.character.proficienciesCharacterClass = new List<string>
+        {
+            "Все доспехи",
+            "Щит",
+            "Простое оружие",
+            "Воинское оружие"
+        };
+    }
     private void SetCharacterClassMonk()
     {
-        throw new NotImplementedException();
-    }
+        findController.character.healthDice = 8;
+        findController.character.abilityMain = "Dexterity";
+        findController.character.abilityMainSecond = "Wisdom";
+        findController.abilityToggle["Strength"].isOn = true;
+        findController.abilityToggle["Dexterity"].isOn = true;
+        findController.abilityToggle["Constitution"].isOn = false;
+        findController.abilityToggle["Intelligence"].isOn = false;
+        findController.abilityToggle["Wisdom"].isOn = false;
+        findController.abilityToggle["Charisma"].isOn = false;
 
+        findController.character.proficienciesCharacterClass = new List<string>
+        {
+            "Простое оружие",
+            "Короткий меч"
+        };
+    }
     private void SetCharacterClassPaladin()
     {
-        throw new NotImplementedException();
-    }
+        findController.character.healthDice = 10;
+        findController.character.abilityMain = "Strength";
+        findController.character.abilityMainSecond = "Charisma";
+        findController.abilityToggle["Strength"].isOn = false;
+        findController.abilityToggle["Dexterity"].isOn = false;
+        findController.abilityToggle["Constitution"].isOn = false;
+        findController.abilityToggle["Intelligence"].isOn = false;
+        findController.abilityToggle["Wisdom"].isOn = true;
+        findController.abilityToggle["Charisma"].isOn = true;
 
+        findController.character.proficienciesCharacterClass = new List<string>
+        {
+            "Все доспехи",
+            "Щит",
+            "Простое оружие",
+            "Воинское оружие"
+        };
+    }
     private void SetCharacterClassRanger()
     {
-        throw new NotImplementedException();
-    }
+        findController.character.healthDice = 10;
+        findController.character.abilityMain = "Charisma";
+        findController.character.abilityMainSecond = "";
+        findController.abilityToggle["Strength"].isOn = true;
+        findController.abilityToggle["Dexterity"].isOn = true;
+        findController.abilityToggle["Constitution"].isOn = false;
+        findController.abilityToggle["Intelligence"].isOn = false;
+        findController.abilityToggle["Wisdom"].isOn = false;
+        findController.abilityToggle["Charisma"].isOn = false;
 
+        findController.character.proficienciesCharacterClass = new List<string>
+        {
+            "Легкий доспех",
+            "Средний доспех",
+            "Щит",
+            "Простое оружие",
+            "Воинское оружие"
+        };
+    }
     private void SetCharacterClassRogue()
     {
-        throw new NotImplementedException();
-    }
+        findController.character.healthDice = 8;
+        findController.character.abilityMain = "Dexterity";
+        findController.character.abilityMainSecond = "";
+        findController.abilityToggle["Strength"].isOn = false;
+        findController.abilityToggle["Dexterity"].isOn = true;
+        findController.abilityToggle["Constitution"].isOn = false;
+        findController.abilityToggle["Intelligence"].isOn = true;
+        findController.abilityToggle["Wisdom"].isOn = false;
+        findController.abilityToggle["Charisma"].isOn = false;
 
+        findController.character.proficienciesCharacterClass = new List<string>
+        {
+            "Легкий доспех",
+            "Простое оружие",
+            "Длинный меч",
+            "Короткий меч",
+            "Рапира",
+            "Ручной арбалет"
+        };
+    }
     private void SetCharacterClassSorcerer()
     {
-        throw new NotImplementedException();
-    }
+        findController.character.healthDice = 6;
+        findController.character.abilityMain = "Charisma";
+        findController.character.abilityMainSecond = "";
+        findController.abilityToggle["Strength"].isOn = false;
+        findController.abilityToggle["Dexterity"].isOn = false;
+        findController.abilityToggle["Constitution"].isOn = true;
+        findController.abilityToggle["Intelligence"].isOn = false;
+        findController.abilityToggle["Wisdom"].isOn = false;
+        findController.abilityToggle["Charisma"].isOn = true;
 
+        findController.character.proficienciesCharacterClass = new List<string>
+        {
+            "Боевой посох",
+            "Дротик",
+            "Кинжал",
+            "Легкий арбалет",
+            "Праща"
+        };
+    }
     private void SetCharacterClassWarlock()
     {
-        throw new NotImplementedException();
-    }
+        findController.character.healthDice = 8;
+        findController.character.abilityMain = "Charisma";
+        findController.character.abilityMainSecond = "";
+        findController.abilityToggle["Strength"].isOn = false;
+        findController.abilityToggle["Dexterity"].isOn = false;
+        findController.abilityToggle["Constitution"].isOn = false;
+        findController.abilityToggle["Intelligence"].isOn = false;
+        findController.abilityToggle["Wisdom"].isOn = true;
+        findController.abilityToggle["Charisma"].isOn = true;
 
+        findController.character.proficienciesCharacterClass = new List<string>
+        {
+            "Легкий доспех",
+            "Простое оружие"
+        };
+    }
     private void SetCharacterClassWizard()
     {
-        throw new NotImplementedException();
+        findController.character.healthDice = 6;
+        findController.character.abilityMain = "Intelligence";
+        findController.character.abilityMainSecond = "";
+        findController.abilityToggle["Strength"].isOn = false;
+        findController.abilityToggle["Dexterity"].isOn = false;
+        findController.abilityToggle["Constitution"].isOn = false;
+        findController.abilityToggle["Intelligence"].isOn = true;
+        findController.abilityToggle["Wisdom"].isOn = true;
+        findController.abilityToggle["Charisma"].isOn = false;
+
+        findController.character.proficienciesCharacterClass = new List<string>
+        {
+            "Боевой посох",
+            "Дротик",
+            "Кинжал",
+            "Легкий арбалет",
+            "Праща"
+        };
     }
 }

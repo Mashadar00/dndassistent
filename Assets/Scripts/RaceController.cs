@@ -67,7 +67,7 @@ public class RaceController : MonoBehaviour
         findController.character.speed = 0;
 
         findController.skills["PerceptionWisToggle"].GetComponent<Toggle>().isOn = false;
-        findController.skills["StrengthIntimidationCha"].GetComponent<Toggle>().isOn = false;
+        findController.skills["StrengthIntimidationChaToggle"].GetComponent<Toggle>().isOn = false;
 
         findController.character.languagesRace = new List<string>();
         findController.character.proficienciesRace = new List<string>();
@@ -85,7 +85,7 @@ public class RaceController : MonoBehaviour
         findController.character.speed = 25;
 
         findController.skills["PerceptionWisToggle"].GetComponent<Toggle>().isOn = false;
-        findController.skills["StrengthIntimidationCha"].GetComponent<Toggle>().isOn = false;
+        findController.skills["StrengthIntimidationChaToggle"].GetComponent<Toggle>().isOn = false;
 
         findController.character.languagesRace = new List<string>
         {
@@ -129,7 +129,7 @@ public class RaceController : MonoBehaviour
         findController.character.speed = 25;
 
         findController.skills["PerceptionWisToggle"].GetComponent<Toggle>().isOn = false;
-        findController.skills["StrengthIntimidationCha"].GetComponent<Toggle>().isOn = false;
+        findController.skills["StrengthIntimidationChaToggle"].GetComponent<Toggle>().isOn = false;
 
         findController.character.languagesRace = new List<string>
         {
@@ -177,7 +177,7 @@ public class RaceController : MonoBehaviour
         findController.character.speed = 30;
 
         findController.skills["PerceptionWisToggle"].GetComponent<Toggle>().isOn = true;
-        findController.skills["StrengthIntimidationCha"].GetComponent<Toggle>().isOn = false;
+        findController.skills["StrengthIntimidationChaToggle"].GetComponent<Toggle>().isOn = false;
 
         findController.character.languagesRace = new List<string>
         {
@@ -228,7 +228,7 @@ public class RaceController : MonoBehaviour
         findController.character.speed = 35;
 
         findController.skills["PerceptionWisToggle"].GetComponent<Toggle>().isOn = true;
-        findController.skills["StrengthIntimidationCha"].GetComponent<Toggle>().isOn = false;
+        findController.skills["StrengthIntimidationChaToggle"].GetComponent<Toggle>().isOn = false;
 
         findController.character.languagesRace = new List<string>
         {
@@ -277,7 +277,7 @@ public class RaceController : MonoBehaviour
         findController.character.speed = 30;
 
         findController.skills["PerceptionWisToggle"].GetComponent<Toggle>().isOn = true;
-        findController.skills["StrengthIntimidationCha"].GetComponent<Toggle>().isOn = false;
+        findController.skills["StrengthIntimidationChaToggle"].GetComponent<Toggle>().isOn = false;
 
         findController.character.languagesRace = new List<string>
         {
@@ -334,7 +334,7 @@ public class RaceController : MonoBehaviour
         findController.character.speed = 25;
 
         findController.skills["PerceptionWisToggle"].GetComponent<Toggle>().isOn = false;
-        findController.skills["StrengthIntimidationCha"].GetComponent<Toggle>().isOn = false;
+        findController.skills["StrengthIntimidationChaToggle"].GetComponent<Toggle>().isOn = false;
 
         findController.character.languagesRace = new List<string>
         {
@@ -369,7 +369,7 @@ public class RaceController : MonoBehaviour
         findController.character.speed = 25;
 
         findController.skills["PerceptionWisToggle"].GetComponent<Toggle>().isOn = false;
-        findController.skills["StrengthIntimidationCha"].GetComponent<Toggle>().isOn = false;
+        findController.skills["StrengthIntimidationChaToggle"].GetComponent<Toggle>().isOn = false;
 
         findController.character.languagesRace = new List<string>
         {
@@ -405,7 +405,7 @@ public class RaceController : MonoBehaviour
         findController.character.speed = 30;
 
         findController.skills["PerceptionWisToggle"].GetComponent<Toggle>().isOn = false;
-        findController.skills["StrengthIntimidationCha"].GetComponent<Toggle>().isOn = false;
+        findController.skills["StrengthIntimidationChaToggle"].GetComponent<Toggle>().isOn = false;
 
         findController.character.languagesRace = new List<string>
         {
@@ -430,7 +430,7 @@ public class RaceController : MonoBehaviour
         findController.character.speed = 25;
 
         findController.skills["PerceptionWisToggle"].GetComponent<Toggle>().isOn = false;
-        findController.skills["StrengthIntimidationCha"].GetComponent<Toggle>().isOn = false;
+        findController.skills["StrengthIntimidationChaToggle"].GetComponent<Toggle>().isOn = false;
 
         findController.character.languagesRace = new List<string>
         {
@@ -467,7 +467,7 @@ public class RaceController : MonoBehaviour
         findController.character.speed = 25;
 
         findController.skills["PerceptionWisToggle"].GetComponent<Toggle>().isOn = false;
-        findController.skills["StrengthIntimidationCha"].GetComponent<Toggle>().isOn = false;
+        findController.skills["StrengthIntimidationChaToggle"].GetComponent<Toggle>().isOn = false;
 
         findController.character.languagesRace = new List<string>
         {
@@ -519,7 +519,7 @@ public class RaceController : MonoBehaviour
         findController.character.speed = 30;
 
         findController.skills["PerceptionWisToggle"].GetComponent<Toggle>().isOn = false;
-        findController.skills["StrengthIntimidationCha"].GetComponent<Toggle>().isOn = false;
+        findController.skills["StrengthIntimidationChaToggle"].GetComponent<Toggle>().isOn = false;
 
         findController.character.languagesRace = new List<string>
         {
@@ -556,7 +556,7 @@ public class RaceController : MonoBehaviour
         findController.character.speed = 30;
         
         findController.skills["PerceptionWisToggle"].GetComponent<Toggle>().isOn = false;
-        findController.skills["StrengthIntimidationCha"].GetComponent<Toggle>().isOn = true;
+        findController.skills["StrengthIntimidationChaToggle"].GetComponent<Toggle>().isOn = true;
 
         findController.character.languagesRace = new List<string>
         {

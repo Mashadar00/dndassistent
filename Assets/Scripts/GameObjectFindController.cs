@@ -25,12 +25,13 @@ public class GameObjectFindController : MonoBehaviour
     void Awake()
     {
         character = GameObject.Find("Character").GetComponent<CharacterData>();
-        level = GameObject.Find("Level").GetComponent<TMP_InputField>();
-        levelBonus = GameObject.Find("LevelBonus").GetComponent<TMP_Text>();
         skillsController = GameObject.Find("Skills").GetComponent<SkillsController>();
         abilityController = GameObject.Find("Ability").GetComponent<AbilityController>();
         textDataController = GameObject.Find("Canvas").GetComponent<TextDataController>();
         itemsController = GameObject.Find("Canvas").GetComponent<ItemsController>();
+
+        level = GameObject.Find("Level").GetComponent<TMP_InputField>();
+        levelBonus = GameObject.Find("LevelBonus").GetComponent<TMP_Text>();
         speed = GameObject.Find("Speed").GetComponent<TMP_Text>();
 
         raceSelected = GameObject.Find("RaceChoice").GetComponentInChildren<TMP_Text>();

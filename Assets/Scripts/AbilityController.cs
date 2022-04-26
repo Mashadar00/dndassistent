@@ -75,7 +75,7 @@ public class AbilityController : MonoBehaviour
     }
     public void CheckValidation(TMP_InputField ability)
     {
-        ability.text = Mathf.Clamp(int.Parse(ability.text), 0, 30).ToString();
+        ability.text = Mathf.Clamp(int.Parse(ability.text), 0, 20).ToString();
     }
 
     public void RandomizeAbility()

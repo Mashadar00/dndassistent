@@ -35,6 +35,28 @@ public class TextDataController : MonoBehaviour
             }
         }
 
+        if (proficiencies.Contains("Простое оружие"))
+        {
+            foreach (string prof in findController.itemsController.simpleWeapon)
+            {
+                if (proficiencies.Contains(prof))
+                {
+                    proficiencies.Remove(prof);
+                }
+            }
+        }
+
+        if (proficiencies.Contains("Воинское оружие"))
+        {
+            foreach (string prof in findController.itemsController.matrialWeapon)
+            {
+                if (proficiencies.Contains(prof))
+                {
+                    proficiencies.Remove(prof);
+                }
+            }
+        }
+
         StringBuilder stringBuilder = new("Умения: ");
         foreach (string prof in proficiencies)
         {
