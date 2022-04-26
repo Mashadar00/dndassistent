@@ -39,23 +39,29 @@ public class SkillsController : MonoBehaviour
             }
             findController.skillToggleText[abilityTitle][i].text = skillBonus.ToString();
         }
+
+        if (abilityTitle == "Wisdom")
+        {
+            findController.character.SetPassivePerception(skillBonus);
+            findController.textDataController.PassivePerceptionInfoUpdate();
+        }
     }
 
-    public void SkillOnToggleUpdate(string skillTitle)
-    {
-        GameObject skill = findController.skills[skillTitle];
+    //public void SkillOnToggleUpdate(string skillTitle)
+    //{
+    //    GameObject skill = findController.skills[skillTitle];
 
-        int skillBonus = int.Parse(skill.GetComponentInChildren<Text>().text);
-        int levelBonus = int.Parse(findController.levelBonus.text);
+    //    int skillBonus = int.Parse(skill.GetComponentInChildren<Text>().text);
+    //    int levelBonus = int.Parse(findController.levelBonus.text);
 
-        if (skill.GetComponent<Toggle>().isOn)
-        {
-            skillBonus += levelBonus;
-        }
-        else
-        {
-            skillBonus -= levelBonus;
-        }
-        skill.GetComponentInChildren<Text>().text = skillBonus.ToString();
-    }
+    //    if (skill.GetComponent<Toggle>().isOn)
+    //    {
+    //        skillBonus += levelBonus;
+    //    }
+    //    else
+    //    {
+    //        skillBonus -= levelBonus;
+    //    }
+    //    skill.GetComponentInChildren<Text>().text = skillBonus.ToString();
+    //}
 }

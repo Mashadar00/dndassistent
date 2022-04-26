@@ -14,6 +14,13 @@ public class RaceController : MonoBehaviour
         findController = GameObject.Find("Canvas").GetComponent<GameObjectFindController>();
     }
 
+    public void SetRandomRace()
+    {
+        System.Random random = new();
+        findController.raceDropDown.value = random.Next(1, findController.raceDropDown.options.Count);
+        RaceChanger();
+    }
+
     public void RaceChanger()
     {
         string raceSelected = findController.raceSelected.text;

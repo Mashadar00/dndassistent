@@ -7,7 +7,7 @@ public class CharacterData : MonoBehaviour
     public int strengthBasic, dexterityBasic, constitutionBasic, intelligenceBasic, wisdomBasic, charismaBasic;
     public int strengthRace, dexterityRace, constitutionRace, intelligenceRace, wisdomRace, charismaRace;
 
-    public int level, speed, healthDice, health;
+    public int level, speed, healthDice, health, initiative, passivePerception;
     public string race, characterClass, abilityMain, abilityMainSecond;
 
     public List<string> proficienciesRace, proficienciesCharacterClass, languagesRace, featuresRace;
@@ -36,6 +36,8 @@ public class CharacterData : MonoBehaviour
         speed = 0;
         healthDice = 0;
         health = 0;
+        initiative = 0;
+        passivePerception = 10;
 
         race = "Race";
         characterClass = "Class";
@@ -65,6 +67,19 @@ public class CharacterData : MonoBehaviour
             "Intelligence" => GetIntelligence,
             "Wisdom" => GetWisdom,
             "Charisma" => GetCharisma,
+            _ => 0,
+        };
+    }
+    public int GetAbilityBasic(string abilityTitle)
+    {
+        return abilityTitle switch
+        {
+            "Strength" => strengthBasic,
+            "Dexterity" => dexterityBasic,
+            "Constitution" => constitutionBasic,
+            "Intelligence" => intelligenceBasic,
+            "Wisdom" => wisdomBasic,
+            "Charisma" => charismaBasic,
             _ => 0,
         };
     }
@@ -100,6 +115,9 @@ public class CharacterData : MonoBehaviour
                 break;
         }
     }
-
-
+    
+    public void SetPassivePerception(int skillBonus)
+    {
+        passivePerception = 10 + skillBonus;
+    }
 }

@@ -44,6 +44,11 @@ public class AbilityController : MonoBehaviour
         
         AbilitySavingThrowsInfoUpdate(abilityTitle);
         findController.skillsController.SkillsModiferUpdater(abilityTitle);
+
+        if (abilityTitle == "Dexterity")
+        {
+            findController.textDataController.IninitiativeInfoUpdate();
+        }
     }
 
     public int AbilityBonusCalculation(int abilityScore)
@@ -86,7 +91,7 @@ public class AbilityController : MonoBehaviour
         {
             findController.character.SetAbilityBasic(abilityTitle, random.Next(21));
 
-            findController.abilityInputField[abilityTitle].text = findController.character.GetAbility(abilityTitle).ToString();
+            findController.abilityInputField[abilityTitle].text = findController.character.GetAbilityBasic(abilityTitle).ToString();
 
             AbilityUpdateInfo(abilityTitle);
             findController.skillsController.SkillsModiferUpdater(abilityTitle);

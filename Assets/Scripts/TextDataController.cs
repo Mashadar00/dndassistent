@@ -1,4 +1,4 @@
-using System.Collections;
+п»їusing System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
@@ -36,7 +36,7 @@ public class TextDataController : MonoBehaviour
             }
         }
 
-        if (proficiencies.Contains("Простое оружие"))
+        if (proficiencies.Contains("РџСЂРѕСЃС‚РѕРµ РѕСЂСѓР¶РёРµ"))
         {
             foreach (string prof in findController.itemsController.simpleWeapon)
             {
@@ -47,7 +47,7 @@ public class TextDataController : MonoBehaviour
             }
         }
 
-        if (proficiencies.Contains("Воинское оружие"))
+        if (proficiencies.Contains("Р’РѕРёРЅСЃРєРѕРµ РѕСЂСѓР¶РёРµ"))
         {
             foreach (string prof in findController.itemsController.matrialWeapon)
             {
@@ -58,7 +58,7 @@ public class TextDataController : MonoBehaviour
             }
         }
 
-        if (proficiencies.Contains("Все доспехи"))
+        if (proficiencies.Contains("Р’СЃРµ РґРѕСЃРїРµС…Рё"))
         {
             foreach (string prof in findController.itemsController.armorClass)
             {
@@ -69,12 +69,12 @@ public class TextDataController : MonoBehaviour
             }
         }
 
-        StringBuilder stringBuilder = new("Умения: ");
+        StringBuilder stringBuilder = new("РЈРјРµРЅРёСЏ: ");
         foreach (string prof in proficiencies)
         {
             stringBuilder.Append(prof + ", ");
         }
-        stringBuilder.Append("\nЯзыки: ");
+        stringBuilder.Append("\nРЇР·С‹РєРё: ");
         foreach (string lang in findController.character.languagesRace)
         {
             stringBuilder.Append(lang + ", ");
@@ -82,12 +82,10 @@ public class TextDataController : MonoBehaviour
 
         findController.proficienciesAndLanguages.text = stringBuilder.ToString();
     }
-
     public void SpeedInfoUpdate()
     {
         findController.speed.text = findController.character.speed.ToString();
     }
-
     public void HealthInfoUpdate()
     {
         findController.health.text = (findController.character.healthDice + 
@@ -95,5 +93,13 @@ public class TextDataController : MonoBehaviour
 
         findController.healthDice.text = findController.character.level.ToString() + "d" + 
                                          findController.character.healthDice.ToString();
+    }
+    public void IninitiativeInfoUpdate()
+    {
+        findController.initiative.text = findController.abilityBonus["Dexterity"].text;
+    }
+    public void PassivePerceptionInfoUpdate()
+    {
+        findController.passivePerception.text = findController.character.passivePerception.ToString();
     }
 }

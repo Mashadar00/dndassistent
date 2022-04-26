@@ -12,8 +12,10 @@ public class GameObjectFindController : MonoBehaviour
     public TextDataController textDataController;
     public ItemsController itemsController;
     public TMP_Text levelBonus, raceSelected, race, features, proficienciesAndLanguages, 
-        speed, characterClassSelected, characterClass, healthDice, health;
+        speed, characterClassSelected, characterClass, healthDice, health, initiative, 
+        passivePerception;
     public TMP_InputField level;
+    public TMP_Dropdown raceDropDown, characterClassDropDown;
     public Dictionary<string, TMP_InputField> abilityInputField, abilityScoreField;
     public Dictionary<string, TMP_Text> abilityBonus;
     public Dictionary<string, Text> abilityToggleText;
@@ -33,15 +35,21 @@ public class GameObjectFindController : MonoBehaviour
         level = GameObject.Find("Level").GetComponent<TMP_InputField>();
         levelBonus = GameObject.Find("LevelBonus").GetComponent<TMP_Text>();
         speed = GameObject.Find("Speed").GetComponent<TMP_Text>();
+        initiative = GameObject.Find("Initiative").GetComponent<TMP_Text>();
+        healthDice = GameObject.Find("HealthDice").GetComponent<TMP_Text>();
+        health = GameObject.Find("Health").GetComponent<TMP_Text>();
+        passivePerception = GameObject.Find("PassivePerception").GetComponent<TMP_Text>();
 
         raceSelected = GameObject.Find("RaceChoice").GetComponentInChildren<TMP_Text>();
         race = GameObject.Find("Race").GetComponent<TMP_Text>();
+        raceDropDown = GameObject.Find("RaceChoice").GetComponent<TMP_Dropdown>();
         characterClassSelected = GameObject.Find("CharacterClassChoice").GetComponentInChildren<TMP_Text>();
         characterClass = GameObject.Find("CharacterClass").GetComponent<TMP_Text>();
+        characterClassDropDown = GameObject.Find("CharacterClassChoice").GetComponent<TMP_Dropdown>();
+
         features = GameObject.Find("Features").GetComponent<TMP_Text>();
         proficienciesAndLanguages = GameObject.Find("ProficienciesAndLanguages").GetComponent<TMP_Text>();
-        healthDice = GameObject.Find("HealthDice").GetComponent<TMP_Text>();
-        health = GameObject.Find("Health").GetComponent<TMP_Text>();
+
 
         abilityInputField = new();
         abilityScoreField = new();

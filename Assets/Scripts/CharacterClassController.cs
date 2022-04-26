@@ -12,6 +12,13 @@ public class CharacterClassController : MonoBehaviour
         findController = GameObject.Find("Canvas").GetComponent<GameObjectFindController>();
     }
 
+    public void SetRandomCharacterClass()
+    {
+        System.Random random = new();
+        findController.characterClassDropDown.value = random.Next(1, findController.characterClassDropDown.options.Count);
+        CharacterClassChanger();
+    }
+
     public void CharacterClassChanger()
     {
         string characterClassSelected = findController.characterClassSelected.text;
