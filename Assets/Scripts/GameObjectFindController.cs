@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class GameObjectFindController : MonoBehaviour
 {
+    public GameObject[] characterLists;
+    public Button buttonPageLeft, buttonPageRight;
     public CharacterData character;
     public SkillsController skillsController;
     public AbilityController abilityController;
@@ -26,6 +28,15 @@ public class GameObjectFindController : MonoBehaviour
 
     void Awake()
     {
+        characterLists = new GameObject[3];
+        characterLists[0] = GameObject.Find("CharacterListFirst");
+        characterLists[1] = GameObject.Find("CharacterListSecond");
+        characterLists[1].SetActive(false);
+        characterLists[2] = GameObject.Find("CharacterListThird");
+        characterLists[2].SetActive(false);
+        buttonPageLeft = GameObject.Find("ButtonPageLeft").GetComponent<Button>();
+        buttonPageRight = GameObject.Find("ButtonPageRight").GetComponent<Button>();
+
         character = GameObject.Find("Character").GetComponent<CharacterData>();
         skillsController = GameObject.Find("Skills").GetComponent<SkillsController>();
         abilityController = GameObject.Find("Ability").GetComponent<AbilityController>();

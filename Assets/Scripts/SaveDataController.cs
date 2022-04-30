@@ -1,47 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+//using iText.Forms;
+//using iText.Forms.Fields;
+//using iText.IO.Font.Constants;
+//using iText.IO.Image;
+//using iText.Kernel.Colors;
+//using iText.Kernel.Font;
+//using iText.Kernel.Geom;
+//using iText.Kernel.Pdf;
+//using iText.Kernel.Pdf.Action;
+//using iText.Kernel.Pdf.Canvas;
+//using iText.Kernel.Pdf.Canvas.Draw;
+//using iText.Kernel.Pdf.Navigation;
+//using iText.Layout;
+//using iText.Layout.Borders;
+//using iText.Layout.Element;
+//using iText.Layout.Properties;
+//using iText.Layout.Renderer;
 
 public class SaveDataController : MonoBehaviour
 {
-    public Canvas canvasToSreenShot;
-    CanvasScreenShot screenShot;
+    //public Image image;
 
     // Use this for initialization
     void Start()
     {
-        //Subscribe
-        CanvasScreenShot.OnPictureTaken += receivePNGScreenShot;
-        screenShot = GameObject.Find("Button").GetComponent<CanvasScreenShot>();
-
-        //take ScreenShot(Image and Text)
-        //screenShot.takeScreenShot(canvasToSreenShot, SCREENSHOT_TYPE.IMAGE_AND_TEXT, false);
-        //take ScreenShot(Image only)
-        //screenShot.takeScreenShot(canvasToSreenShot, SCREENSHOT_TYPE.IMAGE_ONLY, false);
-        //take ScreenShot(Text only)
-        // screenShot.takeScreenShot(canvasToSreenShot, SCREENSHOT_TYPE.TEXT_ONLY, false);
 
     }
 
-    public void MakePngFile()
+    public void SaveAsPdf()
     {
-        screenShot.takeScreenShot(canvasToSreenShot, SCREENSHOT_TYPE.IMAGE_AND_TEXT, false);
+        //PdfDocument pdfDoc = new PdfDocument(new PdfWriter("E:\\test\\demo.pdf"));
+        //PdfCanvas canvas = new PdfCanvas(pdfDoc.AddNewPage());
     }
-
-    public void OnEnable()
-    {
-        //Un-Subscribe
-        CanvasScreenShot.OnPictureTaken -= receivePNGScreenShot;
-    }
-
-    void receivePNGScreenShot(byte[] pngArray)
-    {
-        Debug.Log("Picture taken");
-
-        //Do Something With the Image (Save)
-        string path = Application.persistentDataPath + "/CanvasScreenShot.jpg";
-        System.IO.File.WriteAllBytes(path, pngArray);
-        Debug.Log(path);
-    }
-
 }
