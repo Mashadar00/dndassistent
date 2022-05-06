@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public class Weapon : Item
 {
     public Weapon()
     {
 
     }
 
-    public Weapon(string title, int cost, int weight, int damageMultiply, int damageScore, string damageType, string additionalInfo = "")
+    public Weapon(string title, int cost, int damageMultiply, int damageScore, string damageType, int weight, string additionalInfo = "", bool isRange = false, bool isFencing = false)
     {
         Title = title;
         Cost = cost;
@@ -18,22 +18,20 @@ public class Weapon : MonoBehaviour
         DamageType = damageType;
         Weight = weight;
         AdditionalInfo = additionalInfo;
+        IsRange = isRange;
+        IsFencing = isFencing;
     }
 
-    string title;
-    int cost;
+
     int damageMultiply;
     int damageScore;
     string damageType;
-    int weight;
-    string additionalInfo;
+    bool isRange;
+    bool isFencing;
 
-    public string Title { get => title; set => title = value; }
-    public int Cost { get => cost; set => cost = value; }
-    public int Weight { get => weight; set => weight = value; }
     public int DamageMultiply { get => damageMultiply; set => damageMultiply = value; }
     public int DamageScore { get => damageScore; set => damageScore = value; }
     public string DamageType { get => damageType; set => damageType = value; }
-    public string AdditionalInfo { get => additionalInfo; set => additionalInfo = value; }
-
+    public bool IsRange { get => isRange; set => isRange = value; }
+    public bool IsFencing { get => isFencing; set => isFencing = value; }
 }
