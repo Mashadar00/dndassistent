@@ -62,13 +62,13 @@ public class GameObjectFindController : MonoBehaviour
         proficienciesAndLanguages = GameObject.Find("ProficienciesAndLanguages").GetComponent<TMP_Text>();
 
 
-        abilityInputField = new();
-        abilityScoreField = new();
-        abilityBonus = new();
-        abilityToggleText = new();
-        abilityToggle = new();
-        skillToggleText = new();
-        skillToggle = new();
+        abilityInputField = new Dictionary<string, TMP_InputField>();
+        abilityScoreField = new Dictionary<string, TMP_InputField>();
+        abilityBonus = new Dictionary<string, TMP_Text>();
+        abilityToggleText = new Dictionary<string, Text>();
+        abilityToggle = new Dictionary<string, Toggle>();
+        skillToggleText = new Dictionary<string, Text[]>();
+        skillToggle = new Dictionary<string, Toggle[]>();
 
         foreach (string abilityTitle in abilityController.abilityTitleArray)
         {
@@ -89,7 +89,7 @@ public class GameObjectFindController : MonoBehaviour
             skillToggleText.Add(abilityTitle, tempText);
         }
 
-        skills = new();
+        skills = new Dictionary<string, GameObject>();
         for (int i = 0; i < skillsController.skillArray.Length; i++)
         {
             skills.Add(skillsController.skillArray[i] + "Toggle", GameObject.Find(skillsController.skillArray[i] + "Toggle"));

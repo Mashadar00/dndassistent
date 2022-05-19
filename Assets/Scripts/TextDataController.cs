@@ -16,7 +16,7 @@ public class TextDataController : MonoBehaviour
     {
         List<string> features = findController.character.featuresRace;
 
-        StringBuilder stringBuilder = new("");
+        StringBuilder stringBuilder = new StringBuilder("");
         findController.features.text = "";
         foreach (string ftr in features)
         {
@@ -26,7 +26,7 @@ public class TextDataController : MonoBehaviour
     } 
     public void ProficienciesAndLanguagesInfoUpdater()
     {
-        List<string> proficiencies = new();
+        List<string> proficiencies = new List<string>();
         proficiencies.AddRange(findController.character.proficienciesRace);
         foreach (string prof in findController.character.proficienciesCharacterClass)
         {
@@ -69,7 +69,7 @@ public class TextDataController : MonoBehaviour
             }
         }
 
-        StringBuilder stringBuilder = new("Умения: ");
+        StringBuilder stringBuilder = new StringBuilder("Умения: ");
         foreach (string prof in proficiencies)
         {
             stringBuilder.Append(prof + ", ");

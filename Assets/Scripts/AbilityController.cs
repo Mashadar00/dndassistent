@@ -90,7 +90,7 @@ public class AbilityController : MonoBehaviour
 
     public void RandomizeAbility()
     {
-        System.Random random = new();
+        System.Random random = new System.Random();
 
         foreach (string abilityTitle in abilityTitleArray)
         {

@@ -14,7 +14,7 @@ public class CharacterClassController : MonoBehaviour
 
     public void SetRandomCharacterClass()
     {
-        System.Random random = new();
+        System.Random random = new System.Random();
         findController.characterClassDropDown.value = random.Next(1, findController.characterClassDropDown.options.Count);
         CharacterClassChanger();
     }

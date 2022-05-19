@@ -14,9 +14,14 @@ public class RaceController : MonoBehaviour
         findController = GameObject.Find("Canvas").GetComponent<GameObjectFindController>();
     }
 
+    private void InitializeDropDown()
+    {
+        //findController.raceDropDown.AddOptions()
+    }
+
     public void SetRandomRace()
     {
-        System.Random random = new();
+        System.Random random = new System.Random();
         findController.raceDropDown.value = random.Next(1, findController.raceDropDown.options.Count);
         RaceChanger();
     }
@@ -353,7 +358,7 @@ public class RaceController : MonoBehaviour
             "Общий",
             "Полуросликов"
         };
-        findController.character.proficienciesRace = new();
+        findController.character.proficienciesRace = new List<string>();
         findController.character.featuresRace = new List<string>
         {
             "Везучий. \nЕсли при броске атаки, проверке характеристики" +
@@ -388,7 +393,7 @@ public class RaceController : MonoBehaviour
             "Общий",
             "Полуросликов"
         };
-        findController.character.proficienciesRace = new();
+        findController.character.proficienciesRace = new List<string>();
         findController.character.featuresRace = new List<string>
         {
             "Везучий. \nЕсли при броске атаки, проверке характеристики" +
@@ -423,7 +428,7 @@ public class RaceController : MonoBehaviour
         {
             "Общий"
         };
-        findController.character.proficienciesRace = new();
+        findController.character.proficienciesRace = new List<string>();
         findController.character.featuresRace = new List<string>
         {
             "Дополнительный язык. \nВы можете говорить, читать" +
@@ -449,7 +454,7 @@ public class RaceController : MonoBehaviour
             "Общий",
             "Гномий"
         };
-        findController.character.proficienciesRace = new();
+        findController.character.proficienciesRace = new List<string>();
         findController.character.featuresRace = new List<string>
         {
             "Темное зрение 60",
@@ -486,7 +491,7 @@ public class RaceController : MonoBehaviour
             "Общий",
             "Гномий"
         };
-        findController.character.proficienciesRace = new();
+        findController.character.proficienciesRace = new List<string>();
         findController.character.featuresRace = new List<string>
         {
             "Темное зрение 60",
@@ -538,7 +543,7 @@ public class RaceController : MonoBehaviour
             "Общий",
             "Эльфийский"
         };
-        findController.character.proficienciesRace = new();
+        findController.character.proficienciesRace = new List<string>();
         findController.character.featuresRace = new List<string>
         {
             "Темное зрение 60",
@@ -575,14 +580,10 @@ public class RaceController : MonoBehaviour
             "Общий",
             "Орочий"
         };
-        findController.character.proficienciesRace = new();
+        findController.character.proficienciesRace = new List<string>();
         findController.character.featuresRace = new List<string>
         {
             "Темное зрение 60",
-
-            "Наследие фей. \nВы совершаете с преимуществом" +
-            " спасброски от очарования, и вас невозможно" +
-            " магически усыпить.",
 
             "Непоколебимая стойкость. \nЕсли ваши хиты опустились " +
             "до нуля, но вы при этом не убиты, ваши хиты вместо " +
