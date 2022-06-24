@@ -12677,7 +12677,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1099487713
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14557,6 +14557,7 @@ MonoBehaviour:
   proficienciesCharacterClass: []
   languagesRace: []
   featuresRace: []
+  weapons: []
 --- !u!1 &1398986972
 GameObject:
   m_ObjectHideFlags: 0
@@ -16762,16 +16763,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterLists: []
-  buttonPageLeft: {fileID: 0}
-  buttonPageRight: {fileID: 0}
-  character: {fileID: 0}
-  skillsController: {fileID: 0}
-  abilityController: {fileID: 0}
-  textDataController: {fileID: 0}
-  itemsController: {fileID: 0}
-  levelBonus: {fileID: 0}
-  raceSelected: {fileID: 0}
-  race: {fileID: 0}
+  buttonPageLeft: {fileID: 683608016}
+  buttonPageRight: {fileID: 23233804}
+  character: {fileID: 1390539567}
+  skillsController: {fileID: 1437238931}
+  abilityController: {fileID: 1984596209}
+  textDataController: {fileID: 1668264586}
+  itemsController: {fileID: 1668264587}
+  levelBonus: {fileID: 2065624729}
+  raceSelected: {fileID: 1883374327}
+  race: {fileID: 705785413}
   features: {fileID: 0}
   proficienciesAndLanguages: {fileID: 0}
   speed: {fileID: 0}
@@ -20989,7 +20990,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2034954043
 RectTransform:
   m_ObjectHideFlags: 0

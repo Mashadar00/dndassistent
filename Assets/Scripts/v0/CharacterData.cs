@@ -11,6 +11,7 @@ public class CharacterData : MonoBehaviour
     public string race, characterClass, abilityMain, abilityMainSecond;
 
     public List<string> proficienciesRace, proficienciesCharacterClass, languagesRace, featuresRace;
+    public List<Weapon> weapons;
 
 
     private void Start()
@@ -48,6 +49,7 @@ public class CharacterData : MonoBehaviour
         proficienciesCharacterClass = new List<string>();
         languagesRace = new List<string>();
         featuresRace = new List<string>();
+        weapons = new List<Weapon>();
     }
 
     public int GetStrength { get => strengthBasic + strengthRace; }
